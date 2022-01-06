@@ -1,7 +1,7 @@
 # Video Classification
 
 The primary output of this repository is an interactive Jupyter Notebook that allows the user to explore the data and models 
-behind video classification, as well as to highlight some of the challenges and considerations of working with video data. 
+behind video classification, as well as to highlight some of the challenges and considerations of working with video data. You can read more about video classification and other video understanding tasks in our blog post [An Introduction to Video Understanding: Capabilities and Applications](https://blog.fastforwardlabs.com/2021/12/14/an-introduction-to-video-understanding-capabilities-and-applications.html).
 
 Additionally, this repo contains a benchmarking script that allows the user to perform large-scale evaluation of a video classification model on some standardized video datasets.
 

@@ -224,6 +224,12 @@ class KineticsLoader(object):
         )
         if not os.path.exists(processed_filename) or overwrite:
             print(f"Processing {video_path}")
+            
+            # verify video "chunk" directory exists in processed_data_dir
+            processed_dir = os.path.split(processed_filename)[0]
+            if not os.path.exists(processed_dir):
+                pathlib.Path(processed_dir).mkdir(parents=True, exist_ok=True)
+            
             video_array = load_and_resize_video(video_path, resize_type=resize_type)
 
             if video_acceptable(video_array):

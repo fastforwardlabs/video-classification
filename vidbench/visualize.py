@@ -44,6 +44,7 @@ import glob
 
 
 def make_video_table(
+    data_dir: str,
     youtube_ids: List[str],
     ground_truth_labels: List[str],
     predictions: Optional[List[str]] = None,
@@ -69,11 +70,15 @@ def make_video_table(
     WIDTH = 210
     HEIGHT = WIDTH * 2 // 3
 
-    # TODO: clean up this path stuff
-    data_dir = "drive/MyDrive/video_classification/datasets/kinetics/400/val/*/"
+    # for videos to properly display, data directory must be relative to notebook dir
+    try:
+        data_dir = data_dir[data_dir.find("data"):]
+    except:
+        pass
+
     filepaths = []
     for youtube_id in youtube_ids:
-        filepaths.append(glob.glob(f"{data_dir}/{youtube_id}_*.mp4")[0])
+        filepaths.append(glob.glob(f"{data_dir}/*/{youtube_id}_*.mp4")[0])
 
     # make html video table
     video_html = ["<table><tr>"]
@@ -87,7 +92,7 @@ def make_video_table(
         video_html.append(
             f"""
             <td><h2>{i}</h2><p>{ground_truth_labels[i]}</p><video width="{WIDTH}" height="{HEIGHT}" controls> 
-                <source src={filepaths[i]} type="video/mp4">
+                <source src="{filepaths[i]}" type="video/mp4">
             </video>{prediction_par}</td>"""
         )
 
