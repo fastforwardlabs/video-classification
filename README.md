@@ -1,9 +1,8 @@
 # Video Classification
 
-The primary output of this repository is an interactive Jupyter Notebook that allows the user to explore the data and models 
-behind video classification, as well as to highlight some of the challenges and considerations of working with video data. You can read more about video classification and other video understanding tasks in our blog post [An Introduction to Video Understanding: Capabilities and Applications](https://blog.fastforwardlabs.com/2021/12/14/an-introduction-to-video-understanding-capabilities-and-applications.html).
+The primary contribution of this repository is an interactive Jupyter Notebook that allows the user to explore video classification data and models. It also highlights some of the challenges and considerations of working with video data.
 
-Additionally, this repo contains a benchmarking script that allows the user to perform large-scale evaluation of a video classification model on some standardized video datasets.
+Additionally, this repository contains a script that allows the user to perform evaluation of a video classification model on some standardized video datasets.
 
 Instructions are given both for general use (on a laptop, say), and for Cloudera CML and CDSW.
 We'll first describe what's here, then go through how to run everything.
@@ -16,7 +15,7 @@ The folder structure of the repo is as follows:
 .
 ├── cml             # Contains scripts that facilitate the project launch on CML.
 ├── data            # Location for storing video data. 
-├── scripts         # Contains the benchmarking script.
+├── scripts         # Contains the evaluation script.
 └── vidbench        # A small library of useful functions.
 ```
 There is also an `images` directory which holds figures used in the Jupyter Notebook. 
@@ -24,11 +23,12 @@ There is also an `images` directory which holds figures used in the Jupyter Note
 Let's examine each of the important folders in turn.
 
 ### `cml`
-This script facilitates the automated project setup on CML and is triggered by the declarative 
+These scripts facilitate the automated project setup on CML and are triggered by the declarative 
 pipeline as defined in the `.project-metadata.yaml` file found in the project's root directory.
 
 ```
 cml
+├── install_dependencies.py
 └── download_data.py
 ```
 
