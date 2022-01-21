@@ -7,13 +7,9 @@ This repository introduces Video Classification through a detailed exploration o
 The primary contributions of this repository are
 
 1. An Jupyter Notebook
-
-    - Demonstrates how to download, organize, explore and visuzlize the [Kinetics Human Action Video Dataset](https://deepmind.com/research/open-source/kinetics).
-
-    - Demonstrates how to download from the [Tensorflow hub](https://www.tensorflow.org/hub) a pretrained [I3D video classification model](https://deepmind.com/research/open-source/i3d-model), and test it on small samples of the Kinetics dataset. 
-    
-    - Highlights challenges and considerations of working with video data. 
-
+    - Demonstrating how to download, organize, explore and visuzlize the [Kinetics Human Action Video Dataset](https://deepmind.com/research/open-source/kinetics).
+    - Demonstrating how to download from the [Tensorflow hub](https://www.tensorflow.org/hub) a pretrained [I3D video classification model](https://deepmind.com/research/open-source/i3d-model), and test it on small samples of the Kinetics dataset. 
+    - Highlighting challenges and considerations of working with video data. 
 2. A script that allows the user to perform evaluation of I3D on larger samples, or full splits, of the Kinetics dataset.
 
 For an introduction to the broad field of video understanding, to which video classification belongs, check out the blog [An Introduction to Video Understanding: Capabilities and Applications](https://blog.fastforwardlabs.com/2021/12/14/an-introduction-to-video-understanding-capabilities-and-applications.html).
