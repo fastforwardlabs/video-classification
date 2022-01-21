@@ -6,7 +6,7 @@ This repository introduces Video Classification through a detailed exploration o
 
 The primary contributions of this repository are
 
-1. An Jupyter Notebook
+1. A Jupyter Notebook
     - Demonstrating how to download, organize, explore and visuzlize the [Kinetics Human Action Video Dataset](https://deepmind.com/research/open-source/kinetics).
     - Demonstrating how to download from the [Tensorflow hub](https://www.tensorflow.org/hub) a pretrained [I3D video classification model](https://deepmind.com/research/open-source/i3d-model), and test it on small samples of the Kinetics dataset. 
     - Highlighting challenges and considerations of working with video data. 
