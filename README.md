@@ -1,6 +1,6 @@
 # Video Classification
 
-This repository introduces Video Classification through a detailed exploration of a datasets and model. Video Classification assigns a set of scores to a video clip, where scores typically correspond to action classes.
+This repository introduces Video Classification through a detailed exploration of a dataset and a pretrained model. Video Classification assigns a set of scores to a video clip, where scores typically correspond to action classes.
 
 ![Upsampling](images/video_classification_task.png)
 
