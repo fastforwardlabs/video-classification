@@ -12,7 +12,7 @@ The primary contributions of this repository are
     - Highlighting challenges and considerations of working with video data. 
 2. A script that allows the user to perform evaluation of I3D on larger samples, or full splits, of the Kinetics dataset.
 
-For an introduction to the broad field of video understanding, to which video classification belongs, check out the blog [An Introduction to Video Understanding: Capabilities and Applications](https://blog.fastforwardlabs.com/2021/12/14/an-introduction-to-video-understanding-capabilities-and-applications.html).
+>     For an introduction to the broad field of video understanding, to which video classification belongs, check out the blog [An Introduction to Video Understanding: Capabilities and Applications](https://blog.fastforwardlabs.com/2021/12/14/an-introduction-to-video-understanding-capabilities-and-applications.html).
 
 Instructions are now given to use this repository, both for general use (on a laptop, say), and for Cloudera CML and CDSW.
 We'll first describe the repository's content, then go through how to run everything.
