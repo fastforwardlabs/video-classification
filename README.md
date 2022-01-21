@@ -1,11 +1,25 @@
 # Video Classification
 
-The primary contribution of this repository is an interactive Jupyter Notebook that allows the user to explore video classification data and models. It also highlights some of the challenges and considerations of working with video data.
+This repository introduces Video Classification through a detailed exploration of a datasets and model. Video Classification assigns a set of scores to a video clip, where scores typically correspond to action classes.
 
-Additionally, this repository contains a script that allows the user to perform evaluation of a video classification model on some standardized video datasets.
+![Upsampling](images/video_classification_task.png)
 
-Instructions are given both for general use (on a laptop, say), and for Cloudera CML and CDSW.
-We'll first describe what's here, then go through how to run everything.
+The primary contributions of this repository are
+
+1. An Jupyter Notebook
+
+    - Demonstrates how to download, organize, explore and visuzlize the [Kinetics Human Action Video Dataset](https://deepmind.com/research/open-source/kinetics).
+
+    - Demonstrates how to download from the [Tensorflow hub](https://www.tensorflow.org/hub) a pretrained [I3D video classification model](https://deepmind.com/research/open-source/i3d-model), and test it on small samples of the Kinetics dataset. 
+    
+    - Highlights challenges and considerations of working with video data. 
+
+2. A script that allows the user to perform evaluation of I3D on larger samples, or full splits, of the Kinetics dataset.
+
+For an introduction to the broad field of video understanding, to which video classification belongs, check out the blog [An Introduction to Video Understanding: Capabilities and Applications](https://blog.fastforwardlabs.com/2021/12/14/an-introduction-to-video-understanding-capabilities-and-applications.html).
+
+Instructions are now given to use this repository, both for general use (on a laptop, say), and for Cloudera CML and CDSW.
+We'll first describe the repository's content, then go through how to run everything.
 
 ## Structure
 
