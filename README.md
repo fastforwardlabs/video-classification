@@ -1,11 +1,21 @@
 # Video Classification
 
-The primary contribution of this repository is an interactive Jupyter Notebook that allows the user to explore video classification data and models. It also highlights some of the challenges and considerations of working with video data.
+This repository introduces Video Classification through a detailed exploration of a dataset and a pretrained model. Video Classification assigns a set of scores to a video clip, where scores typically correspond to action classes.
 
-Additionally, this repository contains a script that allows the user to perform evaluation of a video classification model on some standardized video datasets.
+![Upsampling](images/video_classification_task.png)
 
-Instructions are given both for general use (on a laptop, say), and for Cloudera CML and CDSW.
-We'll first describe what's here, then go through how to run everything.
+The primary contributions of this repository are
+
+1. A Jupyter Notebook [video_classification.ipynb](video_classification.ipynb)
+    - Demonstrating how to download, organize, explore and visuzlize the [Kinetics Human Action Video Dataset](https://deepmind.com/research/open-source/kinetics).
+    - Demonstrating how to download from the [Tensorflow hub](https://www.tensorflow.org/hub) a pretrained [I3D video classification model](https://deepmind.com/research/open-source/i3d-model), and test it on small samples of the Kinetics dataset. 
+    - Highlighting challenges and considerations of working with video data. 
+2. A script [scripts/evaluate.py](scripts/evaluate.py) that allows the user to perform evaluation of I3D on larger samples, or full splits, of the Kinetics dataset.
+
+> Check out our blog [An Introduction to Video Understanding: Capabilities and Applications](https://blog.fastforwardlabs.com/2021/12/14/an-introduction-to-video-understanding-capabilities-and-applications.html) for broad overview of the field to which video classification belongs.
+
+Instructions are now given to use this repository, both for general use (on a laptop, say), and for Cloudera CML and CDSW.
+We'll first describe the repository's content, then go through how to run everything.
 
 ## Structure
 
@@ -87,7 +97,7 @@ In CML or CDSW, no virtual env is necessary. Instead, inside a JupyterLab Sessio
 
 ### Running the evaluation script
 
-The `scripts/evaluate.py` script requires the `scripts/config.txt` file which handles all the input arguments. First specify your choices in the config file, and then run the following in an open Session: `!python3 scripts/evaluate.py @scripts/config.txt`
+The [scripts/evaluate.py](scripts/evaluate.py) script requires the [scripts/config.txt](scripts/config.txt) file which handles all the input arguments. First specify your choices in the config file, and then run the following in an open Session: `!python3 scripts/evaluate.py @scripts/config.txt`
 
 Alternatively, this script can also be run automatically with the **Jobs** abstraction by first clicking on **Jobs**, then **New Job**, and then selecting `scripts/evaluate.py` under **Script**. Enter `@scripts/config.txt` under **Arguments** and ensure that the job is given at least 2vCPU/16GiB of resources. Then click **Create Job**. You can now run the job as often as you like or schedule the job at your convenience. 
 
