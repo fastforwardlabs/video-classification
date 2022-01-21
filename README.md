@@ -97,7 +97,7 @@ In CML or CDSW, no virtual env is necessary. Instead, inside a JupyterLab Sessio
 
 ### Running the evaluation script
 
-The `scripts/evaluate.py` script requires the `scripts/config.txt` file which handles all the input arguments. First specify your choices in the config file, and then run the following in an open Session: `!python3 scripts/evaluate.py @scripts/config.txt`
+The [scripts/evaluate.py](scripts/evaluate.py) script requires the [scripts/config.txt](scripts/config.txt) file which handles all the input arguments. First specify your choices in the config file, and then run the following in an open Session: `!python3 scripts/evaluate.py @scripts/config.txt`
 
 Alternatively, this script can also be run automatically with the **Jobs** abstraction by first clicking on **Jobs**, then **New Job**, and then selecting `scripts/evaluate.py` under **Script**. Enter `@scripts/config.txt` under **Arguments** and ensure that the job is given at least 2vCPU/16GiB of resources. Then click **Create Job**. You can now run the job as often as you like or schedule the job at your convenience. 
 
