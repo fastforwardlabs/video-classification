@@ -89,7 +89,7 @@ If the project is launched on CML, a small selection of data will be pre-downloa
 
 ## Required Resources
 
-Video data are rich and complex and, as such, require a considerable amount of storage and memory considerations.
+Video data are rich and complex and, as such, require a considerable amount of storage and memory.
 
 ### Storage
 
@@ -99,12 +99,12 @@ The Kinetics video data used in this repo is only a fraction of what is availabl
 
 In addition to the storage requirements, processing these data through a pre-trained CNN model also requires considerable RAM. We recommend a minimum of 16 GiB which is enough to process a batch of 8 videos. Large batch sizes will require additional resources. 
 
-In CML, at least 2 vCPU / 16 GiB Memory.
+In CML, we recommend at least 2 vCPU / 16 GiB Memory.
 
 
 ### GPUs
 
-This notebook currently supports CPU-only. In the future, we look forward to upgrading this demo to utilize GPUs.
+There is no GPU requirements. In fact, only CPU execution is currently supported. In the future, we look forward to upgrading this demo to utilize GPUs.
 
 -----------
 
@@ -117,12 +117,12 @@ The code and applications within were developed against Python 3.6.9, and are li
 There are three ways to launch this project on CML:
 
 1. **From Prototype Catalog** - Navigate to the Prototype Catalog on a CML workspace, select the "Video Classification" tile, click "Launch as Project", click "Configure Project"
-2. **As ML Prototype** - In a CML workspace, click "New Project", add a Project Name, select "AMPs" as the Initial Setup option, copy in the repo URL, click "Create Project", click "Configure Project". The default configuration values will be taken from the `.project-metadata.yaml` file don't need to be changed.
-3. **Manual Setup** - In a CML workspace, click "New Project", add a Project Name, select "Git" as the Initial Setup option, copy in the repo URL, click "Create Project". Launch a JupyterLab Session with at least 16 GiB of memory and 2 vCPUs. Then follow the Installation instructions in the notebook [video_classification.ipynb](video_classification.ipynb).
+2. **As ML Prototype** - In a CML workspace, click "New Project", add a Project Name, select "AMPs" as the Initial Setup option, copy in the repo URL, click "Create Project", click "Configure Project". The default configuration values will be taken from the `.project-metadata.yaml` file and don't need to be changed.
+3. **Manual Setup** - In a CML workspace, click "New Project", add a Project Name, select "Git" as the Initial Setup option, copy in the repo URL, click "Create Project". Installation of requirements will be done as part of the execution of the Jupyter notebook [video_classification.ipynb](video_classification.ipynb).
 
-### Without using CML
+### Not using CML
 
-To install dependencies, first create and activate a new virtual environment through your preferred means, then pip install from the requirements file. We recommend:
+To install dependencies on your own system, first create and activate a new virtual environment through your preferred means, then pip install from the requirements file. We recommend:
 
 ```python
 python -m venv .venv
@@ -135,25 +135,45 @@ pip install -r requirements.txt
 
 ## Execution 
 
-Launch a JupyterLab Session with at least 16 GiB of memory and 2 vCPUs, on CML, or with similar resources on your own system.
+Here are instructions to run the Jupyter notebook and the evaluation script, both with and without the use of CML.
 
 ### Jupyter notebook
 
-The Jupyter notebook is contains instructions for running it.
+In CML, launch a JupyterLab Session with at least 16 GiB of memory and 2 vCPUs. Outside CML ensure you open the notebook on a system with similar resources. Then simply follow the notebook instructions.
 
 
 ### Evaluation script
 
-The [scripts/evaluate.py](scripts/evaluate.py) script requires the [scripts/config.txt](scripts/config.txt) file which handles all the input arguments. You can use the default values that come with the repository, or specify your own values, in the config file. Execution is then done by executing this command on a terminal of the open session, at the root of the repository:
+Execution of the evaluation script, [scripts/evaluate.py](scripts/evaluate.py), requires the [scripts/config.txt](scripts/config.txt) file which handles all the input arguments. You can use the default values that come with the repository, or specify your own values, in the config file. The output of the execution will be placed in the folder `results`. Here are four different ways to execut the script:
+
+#### CML Workbench Session
+
+Run the following in an open Workbench Session of CML:
+
+```console
+> !python3 scripts/evaluate.py @scripts/config.txt
+```
+
+#### CML Jobs
+
+Alternatively, on CML, this script can also be run automatically with the **Jobs** abstraction by first clicking on **Jobs**, then **New Job**, and then selecting `scripts/evaluate.py` under **Script**. Enter `@scripts/config.txt` under **Arguments** and ensure that the job is given at least 2 vCPU/16 GiB of resources. Then click **Create Job**. You can now run the job as often as you like or schedule the job at your convenience.
+
+#### CML JupyterLab Session
+
+If you already have an JupyterLab session open, you can choose to run the script in a Linux terminal of that session by executing the following command:
+
+```console
+> python3 scripts/evaluate.py @scripts/config.txt
+```
+
+
+#### When not using CML
+
+Execution is then done by executing this command on a terminal of the open session, at the root of the repository:
 
 ```console
 $ python3 scripts/evaluate.py @scripts/config.txt
 ```
-
-Results from the outpute will be placed in the folder `results`.
-
-Alternatively, on CML, this script can also be run automatically with the **Jobs** abstraction by first clicking on **Jobs**, then **New Job**, and then selecting `scripts/evaluate.py` under **Script**. Enter `@scripts/config.txt` under **Arguments** and ensure that the job is given at least 2 vCPU/16 GiB of resources. Then click **Create Job**. You can now run the job as often as you like or schedule the job at your convenience.
-
 
 -----------
 
