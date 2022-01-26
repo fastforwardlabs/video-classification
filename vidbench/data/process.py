@@ -47,6 +47,7 @@ from tensorflow_docs.vis import embed
 
 # Adapted from https://www.tensorflow.org/hub/tutorials/action_recognition_with_tf_hub
 def crop_center_square(frame):
+    """Crops a square from the center of a rectangular array."""
     y, x = frame.shape[0:2]
     min_dim = min(y, x)
     start_x = (x // 2) - (min_dim // 2)
@@ -55,6 +56,7 @@ def crop_center_square(frame):
 
 
 def pad_to_square(frame):
+    """Pads a rectangular array with zeros, so as to make it squared."""
     y, x = frame.shape[0:2]
     if y > x:
         add_x_left = (y - x) // 2
@@ -132,6 +134,7 @@ def video_acceptable(video_np, min_num_frames_acceptable: int = 128) -> bool:
 
 # Adapted from https://www.tensorflow.org/hub/tutorials/action_recognition_with_tf_hub
 def to_gif(images):
+    """Converts an array of images to gif."""
     converted_images = np.clip(images * 255, 0, 255).astype(np.uint8)
     imageio.mimsave("./animation.gif", converted_images, fps=25)
     return embed.embed_file("./animation.gif")
